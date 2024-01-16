@@ -26,17 +26,47 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String strrutern = "";
+        for(int i = 0; i < ((string.length()) - 1); i++){
+          if(string.charAt(i) == 'a'|| string.charAt(i) == 'e'|| string.charAt(i) == 'i'|| string.charAt(i) == 'o'|| string.charAt(i) == 'u'){
+            strrutern = strrutern + (string.charAt(i) - 32);
+          }else{
+           strrutern = strrutern + (string.charAt(i)); 
+          }
+        }
+        return strrutern;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+     String strrutern = "";
+     for(int i = 0; i < ((string.length()) - 1);){
+        if(string.charAt(i) == ' '){
+           i++;
+        }else{
+            if(string.charAt(i) >= 'A' && string.charAt(i) <= 'Z'){
+                strrutern = strrutern + ((string.charAt(i)) + 32);
+            }else{
+                strrutern = strrutern + (string.charAt(i));
+            }
+        }
+     }
+        return strrutern;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+        for(int i = 0; i < ((string.length()) - 1); i++){
+            if(string.charAt(i) == chr ){
+                count++;
+            } 
+        }
+        int [] arr = new int[count];
+        for(int i = 0; i < ((string.length()) - 1); i++){
+            if(string.charAt(i) == chr ){
+              arr [i]  = (string.indexOf(i));
+            } 
+        }
+
+        return arr;
     }
 }
